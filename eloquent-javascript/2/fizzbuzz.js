@@ -34,7 +34,9 @@ const range = (number) =>  {
   return rangeOfNumbers;
 }
 
-// try 100
+// Test range
 const test100 = range(100);
-console.log(test100); // gotta test your utility helper function, too....
+console.log(test100);
+
+// Test the whole thing
 fizzbuzz(test100);
