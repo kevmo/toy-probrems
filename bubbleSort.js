@@ -9,18 +9,25 @@
 
 // The algorthm
 
-const sort = function(numbers) {
+const bubbleSort = function(numbers) {
 
   const length = numbers.length;
 
   for (let x = 0; x < length; x++) {
     for (let y = 0; y < length; y++) {
-      if (numbers[y + 1]) {
-        if (numbers[y + 1] < numbers[y]) {
-          const swap = numbers[y+1];
-          numbers[y + 1] = numbers[y];
-          numbers[y] = swap
-        }
+
+      // no need
+      if (numbers[y + 1] == undefined) {
+        continue;
+      }
+
+      // compare two adjacent numbers
+      // if the number on the right is smaller than
+      // the number on the left - switch places.
+      if (numbers[y + 1] < numbers[y]) {
+        const swap = numbers[y+1];
+        numbers[y + 1] = numbers[y];
+        numbers[y] = swap
       }
     }
   }
@@ -33,4 +40,4 @@ const sort = function(numbers) {
 
 let testArray = [ 420, 4, 69, 11, 62];
 
-console.log(sort(testArray));
+console.log("Sorted? ", bubbleSort(testArray));
